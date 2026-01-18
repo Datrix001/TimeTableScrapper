@@ -76,6 +76,20 @@ lib/
 
 ---
 
+
+## 🔍 Filtering Logic
+
+Currently, the scraper sends only classes whose title contains:
+- "BCA Sem VI"
+- "BCA Sem VI (AIML) - Predictive Analytics- Dr. Shilpa Sardesai - Group 1",
+- "BCA Sem VI (AIML) - Supervised Machine Learning and Advances- Mr. Arun Kumar - Group 1",
+- "BCA Sem VI (SD) - Introduction to web services - Mr. Aniruddha Kshirsagar - Group 1",
+
+You can customise this inside:
+lib/services/timetable_service.dart
+
+---
+
 ## 🛠️ Tech Stack
 
 This project is built with:
@@ -88,6 +102,8 @@ This project is built with:
 
 ---
 
+
+
 ## 📦 Installation
 
 Make sure you have **Dart installed**.
@@ -98,6 +114,15 @@ Then clone the repo and install dependencies:
 git clone <your-repo-url>
 cd timetable-scraper
 dart pub get
+
+📤 Google Sheets Setup:
+
+- Create a Google Sheet
+- Open Extensions → Apps Script
+- Deploy as Web App
+- Copy the Web App URL
+- Paste it inside:
+- lib/constants.dart → sheetsWebhook
 
 ▶️ How to Run
 Run from project root: 
@@ -117,21 +142,7 @@ All the Classes Are Added to Excel.
 ![Example2](screenshots/excel.png)
 
 
-📤 Google Sheets Setup:
 
-- Create a Google Sheet
-- Open Extensions → Apps Script
-- Deploy as Web App
-- Copy the Web App URL
-- Paste it inside:
-- lib/constants.dart → sheetsWebhook
 
 Your Apps Script should accept JSON and append rows.
 
-🔍 Filtering Logic
-
-Currently, the scraper sends only classes whose title contains:
-"BCA Sem VI"
-
-You can customize this inside:
-lib/services/timetable_service.dart
