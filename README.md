@@ -48,12 +48,17 @@ bin/
 
 lib/
 ├── models/
+
 │ └── class_session.dart
 │
+
 ├── services/
+
 │ ├── timetable_service.dart
+
 │ └── sheets_service.dart
 │
+
 └── constants.dart
 
 
@@ -89,33 +94,42 @@ Make sure you have **Dart installed**.
 
 Then clone the repo and install dependencies:
 
-```sh
+
 git clone <your-repo-url>
 cd timetable-scraper
 dart pub get
 
 ▶️ How to Run
-Run from project root:
+Run from project root: 
+
 dart run bin/main.dart
 
-Example output:
-Fetching for: 2026-01-17
-Classes found: 2
-Sent: BCA Sem VI Div A
-Fetching for: 2026-01-18
-Classes found: 1
-Sent: BCA Sem VI (AIML)
+![Example](screenshots/main.png)
 
-📤 Google Sheets Setup
-Create a Google Sheet
-Open Extensions → Apps Script
-Deploy as Web App
-Copy the Web App URL
-Paste it inside:
-lib/constants.dart → sheetsWebhook
+Example output:
+
+![Example1](screenshots/cli_output.png)
+
+Now, what will happen in Google Sheets:
+
+All the Classes Are Added to Excel. 
+
+![Example2](screenshots/excel.png)
+
+
+📤 Google Sheets Setup:
+
+- Create a Google Sheet
+- Open Extensions → Apps Script
+- Deploy as Web App
+- Copy the Web App URL
+- Paste it inside:
+- lib/constants.dart → sheetsWebhook
+
 Your Apps Script should accept JSON and append rows.
 
 🔍 Filtering Logic
+
 Currently, the scraper sends only classes whose title contains:
 "BCA Sem VI"
 
